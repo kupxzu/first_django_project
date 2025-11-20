@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+  <head>
+    <title>admin dashboard</title>
+  </head>
+  <body>
+    <h2>hi admin, {{ request.user.username }}</h2>
+    <p>this page is only for admin (staff users).</p>
+
+    <form method="post" action="{% url 'logout' %}">
+  {% csrf_token %}
+  <button type="submit">logout</button>
+</form>
+  </body>
+</html>
